@@ -1,0 +1,396 @@
+/* =============================
+GLOBAL
+============================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+a,
+button,
+.row,
+.bx,
+.ques {
+    cursor: pointer;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+}
+
+
+body{
+    background:#000;
+    color:white;
+    font-family: Inter, sans-serif;
+}
+
+nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(6px);
+
+
+}
+
+
+.logo {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.911);
+
+}
+
+.opt {
+    justify-self: center;
+    display: inline-block;
+    /* width: 40vw; */
+    display: flex;
+    gap: clamp(1rem, 3vw, 4rem);
+    /* background-color: purple; */
+    /* color: rgb(85, 85, 85); */
+}
+
+
+.menu-btn {
+    display: none;
+}
+
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.side-menu {
+
+    color: rgba(255, 255, 255, 0.7);
+
+
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    position: fixed;
+    top: 0;
+    right: -40%;
+    width: 40%;
+    height: 100vh;
+    /* background: #fff; */
+    padding: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 10;
+    background: linear-gradient(180deg,
+            #0F172A 0%,
+            #0B1E2D 60%,
+            #092433 100%);
+
+
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.side-menu ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.side-menu li {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+.side-menu li:hover {
+    opacity: 0.85;
+}
+
+
+.btn {
+    background: none;
+    border: none;
+    color: lightgray;
+    font-weight: 500;
+    font-size: clamp(0.3rem, 1.2vw, 1.4rem);
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn:hover {
+    /* text-decoration: underline; */
+    color: white;
+}
+
+
+.btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #00c6ff;
+    transition: width var(--fast);
+}
+
+.btn:hover::after {
+    width: 100%;
+}
+
+.feed {
+    background-color: #00c6ff;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.feed:hover {
+    background-color: #00acdb;
+}
+
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+h1{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:60px;
+}
+
+/* =============================
+PORTFOLIO GRID
+============================= */
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+}
+
+.portfolio-card{
+
+    background:#050505;
+    border-radius:18px;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s;
+    position:relative;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-8px);
+    border-color:#00cfff;
+    box-shadow:0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* Image */
+
+.portfolio-img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.portfolio-card:hover .portfolio-img{
+    transform:scale(1.05);
+}
+
+/* Content */
+
+.portfolio-content{
+    padding:24px;
+}
+
+.portfolio-title{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.portfolio-desc{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+.portfolio-btn{
+    display:inline-block;
+    background:#00cfff;
+    color:black;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.portfolio-btn:hover{
+    background:white;
+}
+
+/* =============================
+PROCESS SECTION (ELITE)
+============================= */
+
+.process-section{
+    margin-top:120px;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.process-card{
+
+    background:#050505;
+    padding:40px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.07);
+
+    transition:0.4s;
+}
+
+.process-card:hover{
+    transform:translateY(-6px);
+    border-color:#00cfff;
+}
+
+/* Step number */
+
+.process-number{
+    color:#00cfff;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.process-title{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.process-text{
+    color:#aaa;
+    line-height:1.6;
+}
+
+footer {
+
+    margin-top: 6rem;
+
+    padding: 4rem 10vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4rem;
+
+    background:
+        linear-gradient(to top,
+            #000000,
+            #020b0f);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+.linked{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-brand h3 {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: clamp(1.4rem, 2vw, 2.7rem);
+    margin-bottom: 0.8rem;
+    align-self: center;
+}
+
+.footer-brand p {
+    font-family: "Inter", sans-serif;
+    color: #9aa3a8;
+    line-height: 1.6;
+    max-width: 400px;
+    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
+}
+
+/* LINKS */
+
+footer h5 {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: clamp(1.2rem, 1.2vw, 1.8rem);
+    margin-bottom: 1rem;
+}
+
+footer a {
+    font-family: "Inter", sans-serif;
+    display: block;
+    font-size: clamp(0.4rem, 1.2vw, 1.3rem);
+    color: #7e8a91;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+
+    transition: color var(--fast), transform var(--fast);
+}
+
+footer a:hover {
+
+    color: #00c6ff;
+
+    transform: translateX(4px);
+}

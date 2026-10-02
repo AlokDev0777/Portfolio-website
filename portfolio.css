@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 1rem;
+}
+
+.logo {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 1.7rem);
+    white-space: nowrap;
+    color: white;
+}
+
+.opt {
+    justify-self: center;
+    display: inline-block;
+    /* width: 40vw; */
+    display: flex;
+    gap: clamp(1rem, 3.2vw, 4rem);
+    /* background-color: purple; */
+}
+
+
+.btn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 400;
+    font-size: clamp(0.3rem, 1.3vw, 1.4rem);
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+
+.feed {
+    background-color: #00c6ff;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: none;
+}
+
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.side-menu {
+    color: rgba(255, 255, 255, 0.7);
+
+
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    position: fixed;
+    top: 0;
+    right: -40%;
+    width: 40%;
+    height: 100vh;
+    /* background: #fff; */
+    padding: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 10;
+    background: linear-gradient(180deg,
+            #0F172A 0%,
+            #0B1E2D 60%,
+            #092433 100%);
+
+
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.side-menu ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.side-menu li {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+.side-menu li:hover {
+    opacity: 0.85;
+}
+
+
+/* .work {
+    width: 80%;
+    margin-top: clamp(1rem, 3.5vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.work h1 {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(2.5rem, 3.7vw, 6rem);
+}
+
+.container {
+    margin-top: clamp(0.8rem, 2vw, 2rem);
+    width: 100%;
+    display: flex;
+    gap: clamp(1.3rem, 5vw, 5rem);
+}
+
+.card {
+    height: 19rem;
+    width: 37%;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px 5px #00c6ff;
+}
+
+.card img {
+    width: 100%;
+    height: 11rem;
+    border-top-left-radius: 7%;
+    border-top-right-radius: 7%;
+}
+
+.card .more {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 6%;
+    border-bottom-right-radius: 6%;
+}
+
+.more h2 {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1rem, 2vw, 2.5rem);
+}
+
+.more p {
+    color: grey;
+}
+
+.more button {
+    background-color: #00c6ff;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.text {
+    width: 100%;
+    padding-left: 1rem;
+}
+
+.view {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+} */
+
+/* ===============================
+   WORK SECTION – CINEMATIC PREMIUM
+================================ */
+
+.work {
+    width: min(1200px, 90%);
+    margin: clamp(3rem,6vw,6rem) auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:3rem;
+}
+
+.work h1 {
+    font-size: clamp(2.5rem,4vw,3.5rem);
+    font-weight:600;
+    letter-spacing:-0.02em;
+}
+
+.container{
+    width:min(1300px,90%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+
+/* ===============================
+   ELITE CARD
+================================ */
+
+.card{
+
+    position:relative;
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:#070c0e;
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+/* IMAGE FIRST */
+
+.preview{
+    overflow:hidden;
+}
+
+.preview img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+
+    transition:transform .6s ease;
+}
+
+/* CONTENT */
+
+.more{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.more h2{
+    font-size:22px;
+    font-weight:600;
+}
+
+.more p{
+    color:#9aa4aa;
+}
+
+/* BUTTON */
+
+.view button{
+    border:none;
+    background:#00c6ff;
+    color:black;
+
+    padding:8px 20px;
+    border-radius:999px;
+
+    cursor:pointer;
+}
+
+
+/* ===============================
+   CINEMATIC HOVER
+================================ */
+
+.card::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(0,198,255,.15),
+        transparent 60%
+    );
+
+    opacity:0;
+    transition:.4s;
+}
+
+.card:hover::after{
+    opacity:1;
+}
+
+.card:hover{
+
+    transform:translateY(-18px) scale(1.02);
+
+    box-shadow:
+        0 40px 120px rgba(0,0,0,.8),
+        0 0 50px rgba(0,198,255,.2);
+}
+
+.card:hover .preview img{
+    transform:scale(1.08);
+}
+
+
+
+#Procedure{
+
+    width:min(1300px,90%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+/* ELITE PROCESS CARD */
+
+.step{
+
+    padding:32px;
+
+    border-radius:18px;
+
+    background:#05090b;
+    border:1px solid rgba(255,255,255,.05);
+
+    position:relative;
+
+    transition:.4s;
+}
+
+.step::before{
+
+    content:"";
+    position:absolute;
+
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+
+    background:#00c6ff;
+    opacity:.2;
+}
+
+.step:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.7),
+        0 0 40px rgba(0,198,255,.15);
+}
+
+
+/* subtle cinematic light sweep */
+
+#Procedure::before {
+    content:"";
+    position:absolute;
+    left:-20%;
+    top:-10%;
+    width:70%;
+    height:120%;
+    background: radial-gradient(circle,#00c6ff18,transparent 70%);
+    filter:blur(120px);
+    z-index:-1;
+}
+
+
+#Procedure h1 {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(2.5rem, 3.7vw, 6rem);
+}
+
+
+#Procedure .steps {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 3vw; */
+}
+
+.step {
+    height: clamp(3rem, 14vw, 10rem);
+    width: clamp(3rem, 17vw, 13rem);
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    /* background-color: purple; */
+    border-radius: 8%;
+    border: 1px solid #00c8ffc7;
+}
+
+.step h3 {
+    color: lightgrey;
+    height: 50%;
+    font-family: "Inter", sans-serif;
+    opacity: 0.8;
+}
+
+.step h4 {
+    color: lightgrey;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(0.7rem, 1.2vw, 2.3rem);
+}
+
+.step p {
+    color: grey;
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+}
+
+.connect {
+    background-color: #00c8ff56;
+    height: 1px;
+    width: 3vw;
+}
+
+.rassi {
+    width: 1px;
+    background-color: #00c8ff56;
+    height: 2.3rem;
+    display: none;
+}
+
+.dba {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    /* height: 30vh; */
+    border-top: 1px solid grey;
+    height: auto;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    gap: 5vw;
+    padding: 3vw 0 4vw 10vw;
+    margin-top: 5rem;
+}
+
+a {
+    display: block;
+    font-size: 0.9rem;
+    color: rgb(107, 107, 107);
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 0.7rem;
+    color: rgb(184, 184, 184);
+}
+
+
+.process-section {
+  width: min(85%, 1400px);
+  margin: 8rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Header */
+.process-header h1 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+}
+
+.process-header p {
+  margin-top: 0.8rem;
+  max-width: 520px;
+  color: #a0a0a0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Steps layout */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+/* Cards */
+.process-card {
+  position: relative;
+  padding: 2rem 1.8rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 198, 255, 0.6);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Highlight important steps */
+.process-card.highlight {
+  background: linear-gradient(
+    160deg,
+    rgba(0, 198, 255, 0.12),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+/* Step number */
+.step-number {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: #00c6ff;
+  font-weight: 600;
+}
+
+/* Titles */
+.process-card h3 {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Description */
+.process-card p {
+  margin-top: 0.6rem;
+  color: #b5b5b5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Footnote */
+.process-footnote {
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .process-header p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+
+    .opt,
+    .feed {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+@media (min-width: 801px) {
+
+    .side-menu,
+    .overlay {
+        display: none;
+    }
+}
+
+@media (max-width:850px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8vw;
+    }
+
+    .card {
+        width: 68%;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 32vw;
+        height: 30vw;
+    }
+
+    .connect {
+        display: none;
+    }
+
+    .rassi {
+        display: block;
+        align-self: center;
+    }
+}
